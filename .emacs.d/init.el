@@ -14,13 +14,14 @@
 ;; === Autoinstall Packages: ===
 (require 'cl)
 
-(defvar required-packages
-  '(ack-and-a-half
+(defvar required-packages '(ack-and-a-half
     evil
     magit
     rainbow-mode
     undo-tree
     tabbar
+    sr-speedbar
+    monokai-theme
     solarized-theme)
   "A list of packages to ensure are installed at launch.")
 
@@ -54,12 +55,44 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(load-theme 'solarized-dark t)
 
 (when window-system (set-frame-size (selected-frame) 120 45))
 
-(require 'tabbar)
-(tabbar-mode t)
 
 (require 'evil)
 (evil-mode 1)
+
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
+(global-linum-mode t)
+(ido-mode t)
+(show-paren-mode 1)
+
+(setq solarized-distinct-fringe-background t)
+(setq solarized-high-contrast-mode-line t)
+(setq solarized-use-less-bold t)
+(setq solarized-use-more-italic t)
+
+(load-theme 'monokai t)
+
+;;(require 'powerline)
+;;(powerline-evil-vim-theme)
+
+;; === Loading other config files: ===
+
+(defconst user-init-dir
+  (cond ((boundp 'user-emacs-directory)
+         user-emacs-directory)
+        ((boundp 'user-init-directory)
+         user-init-directory)
+        (t "~/.emacs.d/")))
+
+
+(defun load-user-file (file)
+  (interactive "f")
+  "Load a file in current user's configuration directory"
+  (load-file (expand-file-name file user-init-dir)))
+
+(load-user-file "lermex-speedbar.el")
+(load-user-file "lermex-tabbar.el")
