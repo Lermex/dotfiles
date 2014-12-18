@@ -18,6 +18,8 @@
     evil
     magit
     rainbow-mode
+    rainbow-delimiters
+    smartparens
     undo-tree
     tabbar
     sr-speedbar
@@ -69,12 +71,21 @@
 (ido-mode t)
 (show-paren-mode 1)
 
+(require 'smartparens-config)
+(smartparens-global-mode t)
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+(windmove-default-keybindings)
+
 (setq solarized-distinct-fringe-background t)
 (setq solarized-high-contrast-mode-line t)
 (setq solarized-use-less-bold t)
 (setq solarized-use-more-italic t)
 
 (load-theme 'monokai t)
+(set-default-font "Inconsolata-12")
 
 ;;(require 'powerline)
 ;;(powerline-evil-vim-theme)
