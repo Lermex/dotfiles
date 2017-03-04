@@ -10,4 +10,5 @@ tmp/
 .DS_Store
 *.cache
 *.log
+*.swp
 *.*#
