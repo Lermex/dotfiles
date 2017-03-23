@@ -1,0 +1,60 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "9b80833b-bd9a-45cf-be7a-8a4e199e9d41"
+  "atom-latex":
+    preview_after_build: "Do nothing"
+  "atom-material-ui":
+    colors:
+      abaseColor: "#9eb1ec"
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui: {}
+  core:
+    disabledPackages: [
+      "file-icons"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "outlander-syntax"
+    ]
+    useCustomTitleBar: true
+  editor:
+    fontFamily: "Fira Code"
+    fontSize: 12
+    preferredLineLength: 140
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "316d4e65-5aff-e923-d812-03dfdf448848"
+  "file-icons": {}
+  latex:
+    buildOnSave: true
+    engine: "lualatex"
+    opener: "pdf-view"
+  latextools:
+    viewer: "pdf-view"
+    win32: {}
+  linter:
+    showErrorPanel: false
+  "pdf-view":
+    fitToWidthOnOpen: true
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        green: "#009688"
+        magenta: "#cc99cc"
+      zBright:
+        brightCyan: "#009688"
+        brightGreen: "#91fd91"
+        brightMagenta: "#f8baf8"
+    core:
+      shell: "/bin/zsh"
+    style:
+      theme: "one-dark"
+  "terminal-plus":
+    core: {}
+  welcome:
+    showOnStartup: false
